@@ -1,0 +1,76 @@
+/* 두번째 베너 네비게이션 버튼 */
+.second .swiper-button-prev,
+.second .swiper-button-next {
+  position: absolute;
+  top: 70px;
+  background-color: white;
+  color: black !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.second .swiper-button-prev {
+  margin-left: 90px;
+}
+.second .swiper-button-next {
+  margin-right: 90px;
+}
+
+/* 두번째 베너 화살표 아이콘 스타일 */
+.second .swiper-button-prev:after,
+.second .swiper-button-next:after {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+}
+
+/* Tablet */
+@media screen and (max-width: 1023px) {
+  .second .swiper-button-prev,
+  .second .swiper-button-next {
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    color: black !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .second .swiper-button-prev {
+    margin-left: 60px;
+  }
+  .second .swiper-button-next {
+    margin-right: 60px;
+  }
+
+  /* 두번째 베너 화살표 아이콘 스타일 */
+  .second .swiper-button-prev:after,
+  .second .swiper-button-next:after {
+    font-size: 1rem !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 745px) {
+  .second .swiper-button-prev,
+  .second .swiper-button-next {
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    color: black !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .second .swiper-button-prev {
+    margin-left: 10px;
+  }
+  .second .swiper-button-next {
+    margin-right: 10px;
+  }
+
+  /* 두번째 베너 화살표 아이콘 스타일 */
+  .second .swiper-button-prev:after,
+  .second .swiper-button-next:after {
+    font-size: 0.8rem !important;
+  }
+}
