@@ -4,8 +4,10 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay, Navigation, Pagination} from 'swiper/modules';
 import {mainBanners} from '@/mocData/banner-info';
 import '@/styles/innerBtnSwiper.css';
+import {mainStore} from '@/service/store/mainStore';
 
 export default function MainBanner() {
+  const {device} = mainStore();
   return (
     <Swiper
       modules={[Autoplay, Pagination, Navigation]}
@@ -20,15 +22,24 @@ export default function MainBanner() {
           return `<span class="${className} custom-bullet "></span>`;
         },
       }}
-      navigation={true}
+      navigation={device !== 'mobile'}
     >
-      {mainBanners.map((banner, index) => (
-        <SwiperSlide key={index}>
+      {mainBanners.map(banner => (
+        <SwiperSlide key={banner.key}>
           <div className="relative flex h-full w-full items-center bg-center bg-no-repeat">
-            <Image src={banner.img} alt={banner.title} fill style={{objectFit: 'cover'}} priority />
-            <div className="absolute left-90 ml-6 text-white tablet:ml-32 pc:left-40 pc:ml-80">
-              <h3 className="mb-2 text-2xl font-bold tablet:text-3xl pc:text-6xl">{banner.title}</h3>
-              <h2 className="text-lg font-semibold tablet:text-2xl">{banner.subtitle}</h2>
+            <Image src={banner.img} alt={'main-banner-img'} fill style={{objectFit: 'cover'}} priority />
+            <div className="absolute left-70 top-100 flex flex-col text-black-50 tablet:left-130 tablet:top-130 pc:left-150 pc:top-200">
+              {banner.title.map((bnTitle, idx) => {
+                return (
+                  <span className="mb-5 text-lg font-bold tablet:text-xl pc:text-2xl" key={`main-banner-title-key-${idx}`}>
+                    {bnTitle}
+                  </span>
+                );
+              })}
+              <span className="my-20 text-sm font-semibold tablet:text-md pc:text-2lg">{banner.subtitle}</span>
+              <button type="button" className="w-120 rounded-50 bg-black-200 p-5 text-md font-normal text-white">
+                더 알아보기
+              </button>
             </div>
           </div>
         </SwiperSlide>

@@ -32,7 +32,7 @@ const Nevi = () => {
   useEffect(() => {
     const checkMobile = () => {
       const checkDevice = window.innerWidth <= 743;
-      setDevice(checkDevice ? 'mobile' : 'order');
+      setDevice(checkDevice ? 'mobile' : 'windows');
       return checkDevice;
     };
 

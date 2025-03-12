@@ -7,6 +7,6 @@ interface MainState {
 }
 
 export const mainStore = create<MainState>(set => ({
-  device: 'mobile',
+  device: 'windows',
   setDevice: device => set({device}),
 }));

@@ -15,8 +15,7 @@
 .swiper-button-prev,
 .swiper-button-next {
   background-color: #171717;
-  opacity: 0.8;
-  margin: 20px;
+  margin: 0 40px 0 40px;
   border-radius: 50%;
   color: white !important;
   width: 50px !important;

@@ -116,7 +116,8 @@ export default {
       },
 
       fontSize: {
-        '4xl': ['50px', '60px'],
+        '5xl': ['50px', '60px'],
+        '4xl': ['42px', '42px'],
         '3xl': ['32px', '42px'],
         '2xl': ['24px', '32px'],
         xl: ['20px', '32px'],

@@ -12,7 +12,7 @@ const Home = () => {
         <section className="relative h-350 bg-black-50 py-50 tablet:h-420 pc:h-560">
           <SecondBanner />
         </section>
-        <section className="h-350 bg-white py-50 tablet:h-420 pc:h-560">
+        <section className="h-350 bg-white py-20 tablet:h-420 tablet:py-30 pc:h-560 pc:py-50">
           <SearchClass />
         </section>
       </div>
