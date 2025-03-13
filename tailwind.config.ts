@@ -126,6 +126,7 @@ export default {
         md: ['14px', '24px'],
         sm: ['13px', '22px'],
         xs: ['12px', '18px'],
+        '2xs': ['10px', '16px'],
       },
       fontWeight: {
         bold: '700',

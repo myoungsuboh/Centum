@@ -1,4 +1,4 @@
-const mainBanners = [
+const mainBannerInfo = [
   {
     key: 1,
     img: '/img/img_banner0.webp',
@@ -31,7 +31,7 @@ const mainBanners = [
   },
 ];
 
-const secondBanners = [
+const secondBannerInfo = [
   {
     title: 'MERISE',
   },
@@ -49,4 +49,19 @@ const secondBanners = [
   },
 ];
 
-export {mainBanners, secondBanners};
+const thirdBannerInfo = [
+  {
+    alt: 'third-banner-img',
+    img: '/img/cebu-sea.webp',
+  },
+  {
+    alt: 'third-banner-img',
+    img: '/img/cebu-city.webp',
+  },
+  {
+    alt: 'third-banner-img',
+    img: '/img/cebu-sea2.webp',
+  },
+];
+
+export {mainBannerInfo, secondBannerInfo, thirdBannerInfo};

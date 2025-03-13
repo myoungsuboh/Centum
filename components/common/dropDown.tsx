@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dropdown, Space} from 'antd';
-import {NaviItems} from '@/mocData/nevi';
+import {NaviItems} from '@/mocData/nevi-info';
 import {DownOutlined} from '@ant-design/icons';
 
 const dropDown = () => {

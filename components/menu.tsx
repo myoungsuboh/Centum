@@ -9,9 +9,11 @@ const Menu = () => {
   };
 
   return (
-    <ul className="">
-      <li onClick={handleClick}>솔루션{selected ? <UpOutlined /> : <DownOutlined />}</li>
-    </ul>
+    <div className="flex flex-col content-center justify-center">
+      <ul className="">
+        <li onClick={handleClick}>솔루션{selected ? <UpOutlined /> : <DownOutlined />}</li>
+      </ul>
+    </div>
   );
 };
 

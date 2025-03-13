@@ -1,0 +1,76 @@
+/* 두번째 베너 네비게이션 버튼 */
+.outer-banner .swiper-button-prev,
+.outer-banner .swiper-button-next {
+  position: absolute;
+  top: 90px;
+  background-color: white;
+  color: black !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+/* 두번째 베너 화살표 아이콘 스타일 */
+.outer-banner .swiper-button-prev:after,
+.outer-banner .swiper-button-next:after {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+}
+
+.outer-banner .swiper-button-prev {
+  margin-left: 90px;
+}
+.outer-banner .swiper-button-next {
+  margin-right: 90px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1023px) {
+  .outer-banner .swiper-button-prev,
+  .outer-banner .swiper-button-next {
+    position: absolute;
+    top: 60px;
+    background-color: white;
+    color: black !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* 두번째 베너 화살표 아이콘 스타일 */
+  .outer-banner .swiper-button-prev:after,
+  .outer-banner .swiper-button-next:after {
+    font-size: 1rem !important;
+  }
+
+  .outer-banner .swiper-button-prev {
+    margin-left: 60px;
+  }
+  .outer-banner .swiper-button-next {
+    margin-right: 60px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 745px) {
+  .outer-banner .swiper-button-prev,
+  .outer-banner .swiper-button-next {
+    position: absolute;
+    top: 50px;
+    background-color: white;
+    color: black !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* 두번째 베너 화살표 아이콘 스타일 */
+  .outer-banner .swiper-button-prev:after,
+  .outer-banner .swiper-button-next:after {
+    font-size: 0.8rem !important;
+  }
+
+  .outer-banner .swiper-button-prev {
+    margin-left: 10px;
+  }
+  .outer-banner .swiper-button-next {
+    margin-right: 10px;
+  }
+}

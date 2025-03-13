@@ -1,7 +1,7 @@
 'use client';
-import {searchClassList} from '@/mocData/search-class-info';
-import {DoubleRightOutlined} from '@ant-design/icons';
 import {useRouter} from 'next/navigation';
+import {DoubleRightOutlined} from '@ant-design/icons';
+import {searchClassList} from '@/mocData/search-class-info';
 
 export default function SearchClass() {
   const router = useRouter();
@@ -16,15 +16,15 @@ export default function SearchClass() {
         <div className="flex flex-col py-10 text-xs tracking-tight tablet:py-10 tablet:text-md pc:py-25 pc:text-xl">
           <span>원하는 목표와 학습 방식에 따라 완벽한 프로그램을 선택하세요!</span>
         </div>
-        <div className="flex flex-row flex-wrap justify-center gap-20 tablet:h-250 pc:h-300">
+        <div className="flex h-350 flex-row flex-wrap justify-center gap-20 tablet:h-250 pc:h-300">
           {searchClassList.map(dt => {
             return (
-              <div className="relative flex w-235 flex-col rounded-5 bg-purple-200 p-20 tablet:w-150 pc:w-200" key={`search-class-${dt.key}`}>
-                <span className="font-semibold tablet:mb-5 tablet:text-lg pc:mb-10 pc:text-xl">{dt.title}</span>
-                <span className="text-sm font-medium tablet:text-md pc:text-lg">{dt.subtitle}</span>
+              <div className="relative flex w-[40%] flex-col rounded-5 bg-purple-200 p-20 tablet:w-[20%] pc:w-[20%]" key={`search-class-${dt.key}`}>
+                <span className="text-xs font-semibold tablet:mb-5 tablet:text-md pc:mb-10 pc:text-2lg">{dt.title}</span>
+                <span className="text-2xs font-medium tablet:text-xs pc:text-md">{dt.subtitle}</span>
                 <button
                   type="button"
-                  className="absolute bottom-20 left-20 rounded-4 bg-purple-500 p-15 text-sm text-white tablet:p-10"
+                  className="text-2xs absolute bottom-20 left-20 w-60 rounded-4 bg-purple-500 p-5 text-white tablet:w-70 tablet:p-10 tablet:text-xs pc:w-90 pc:text-lg"
                   onClick={() => handleMovePage(dt.href)}
                 >
                   둘러보기
@@ -34,8 +34,8 @@ export default function SearchClass() {
           })}
         </div>
       </div>
-      <div className="my-10 flex flex-row justify-end tablet:pr-30 pc:pr-70">
-        <button type="button" className="gap-10 text-2xl font-semibold">
+      <div className="absolute bottom-0 right-[10%] mb-20 flex flex-row justify-end tablet:right-[7%] pc:right-[8%]">
+        <button type="button" className="gap-10 text-2lg font-semibold tablet:text-xl pc:text-2xl">
           더 많은 어학원 알아보기 <DoubleRightOutlined />
         </button>
       </div>

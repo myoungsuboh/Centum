@@ -1,8 +1,8 @@
 'use client';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation, Pagination} from 'swiper/modules';
-import {secondBanners} from '@/mocData/banner-info';
-import '@/styles/outerBtnSwiper.css';
+import '@/styles/outerBannerSwiper.css';
+import {secondBannerInfo} from '@/mocData/banner-info';
 
 export default function SecondBanner() {
   return (
@@ -16,24 +16,24 @@ export default function SecondBanner() {
           <span>쎈텀유학원 현지 매니저가 직접 관리하여 안심하고 유학하세요!</span>
         </div>
       </div>
-      <div className="second relative">
+      <div className="outer-banner relative">
         <div className="swiper-button-prev" />
-        <div className="px-50 tablet:px-130 pc:px-160">
+        <div className="px-50 tablet:px-130 pc:px-170">
           <Swiper
-            className="second"
+            className="outer-banner"
             modules={[Pagination, Navigation]}
             spaceBetween={10}
             slidesPerView={3}
             navigation={{
-              nextEl: '.second .swiper-button-next',
-              prevEl: '.second .swiper-button-prev',
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
             }}
             parallax={true}
           >
-            {secondBanners.map((banner, index) => (
+            {secondBannerInfo.map((banner, index) => (
               <SwiperSlide key={index} className="swiperSlide">
                 <div className="m-10 flex h-100 items-center justify-center rounded-10 bg-white text-black-50 tablet:h-130 pc:h-200">
-                  <h3 className="text-xl font-bold tablet:text-2xl pc:text-2xl">{banner.title}</h3>
+                  <h3 className="text-lg font-bold tablet:text-xl pc:text-2xl">{banner.title}</h3>
                 </div>
               </SwiperSlide>
             ))}
