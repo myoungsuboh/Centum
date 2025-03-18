@@ -37,13 +37,4 @@ const SideNaviItems = [
   },
 ];
 
-const NavCategory = [
-  {key: 1, value: '쎈텀유학'},
-  {key: 2, value: '필리핀 어학연수'},
-  {key: 3, value: '학원 정보'},
-  {key: 4, value: '프로모션'},
-  {key: 5, value: '상담 문의'},
-  {key: 6, value: '게시판'},
-];
-
-export {NaviItems, SideNaviItems, NavCategory};
+export {NaviItems, SideNaviItems};

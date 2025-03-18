@@ -3,12 +3,20 @@ import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import hamburger from '@/public/icon/hamburger-menu.svg';
-
 import Menu from '@/components/menu';
 import {SearchOutlined} from '@ant-design/icons';
-import {NavCategory} from '@/mocData/nevi-info';
-import {useRouter} from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
 import {mainStore} from '@/service/store/mainStore';
+import logo from '@/public/img/logo.png';
+
+const NavCategory = [
+  {key: 1, title: '쎈텀유학', value: '/studyAbroad'},
+  {key: 2, title: '필리핀 어학연수', value: '/'},
+  {key: 3, title: '학원 정보', value: '/'},
+  {key: 4, title: '프로모션', value: '/promotions'},
+  {key: 5, title: '상담 문의', value: '/inquiry'},
+  {key: 6, title: '게시판', value: '/'},
+];
 
 interface isScrolledType {
   isScrolled: boolean;
@@ -55,7 +63,9 @@ const MobileNavi = (isScrolled: isScrolledType) => {
   return (
     <div className={`sticky left-0 top-0 h-50 w-full content-center items-center ${isScrolled && 'bg-white shadow-md'} z-20`}>
       <div className="mx-50 flex flex-row items-center justify-between">
-        <Link href="/">Home</Link>
+        <Link href="/" className="relative">
+          <Image src={logo} className="h-30 w-100" alt="logo" />
+        </Link>
         <div className="relative h-30 w-30" onClick={handleHamburgerClick}>
           {!isOpen ? (
             <Image src={hamburger} fill alt="hamburger" />
@@ -77,13 +87,14 @@ const MobileNavi = (isScrolled: isScrolledType) => {
 
 const PCNavi = (isScrolled: isScrolledType) => {
   const router = useRouter();
+  const pathName = usePathname();
 
   const handleSearch = () => {
     console.log('search language school');
   };
 
-  const handleMovePage = () => {
-    router.push('/');
+  const handleMovePage = (value: string) => {
+    router.push(`${value}`);
   };
 
   return (
@@ -91,32 +102,41 @@ const PCNavi = (isScrolled: isScrolledType) => {
       <div className={`flex h-50 w-full items-center justify-center bg-purple-500`}>
         <span className="text-white">●필리핀 세부 전문 유학원 ●</span>
       </div>
-      <div className={`sticky left-0 top-0 h-150 w-full content-center items-center ${isScrolled && 'bg-white shadow-md'} z-20`}>
-        <div className="flex w-full flex-col">
-          <div className="mx-100 my-20 flex flex-row items-center justify-between">
-            <div className="flex flex-row gap-20">
-              <Link href="/">Home</Link>
-              <div className="relative">
-                <input
-                  type="text"
-                  className="h-40 w-300 rounded-5 bg-gray-100 pl-15 pr-50 text-black-50 placeholder-black-50 focus:border-transparent focus:outline-none focus:ring-0"
-                  placeholder='원하는 "어학원"을 검색해보세요'
-                  onChange={handleSearch}
-                />
-                <SearchOutlined className="absolute right-10 top-12" />
+      {pathName !== '/signin' && (
+        <div className={`sticky left-0 top-0 h-150 w-full content-center items-center ${isScrolled && 'bg-white shadow-md'} z-20`}>
+          <div className="flex w-full flex-col">
+            <div className="mx-100 my-20 flex flex-row items-center justify-between">
+              <div className="flex flex-row gap-20">
+                <Link href="/" className="relative">
+                  <Image src={logo} className="h-50 w-100 pc:w-150" alt="logo" />
+                </Link>
+                <div className="relative">
+                  <input
+                    type="text"
+                    className="h-40 w-250 rounded-5 bg-gray-100 pl-15 pr-50 text-sm text-black-50 placeholder-black-50 focus:border-transparent focus:outline-none focus:ring-0 pc:w-400 pc:text-md"
+                    placeholder='원하는 "어학원"을 검색해보세요'
+                    onChange={handleSearch}
+                  />
+                  <SearchOutlined className="absolute right-10 top-12" />
+                </div>
               </div>
-            </div>
-            <button className="h-40 w-150 rounded-5 border-none bg-purple-400 px-10 text-md text-white">로그인 및 회원가입</button>
-          </div>
-          <div className="flex flex-row justify-center gap-50">
-            {NavCategory.map(dt => (
-              <button type="button" key={dt.key} className="text-lg font-semibold" onClick={handleMovePage}>
-                {dt.value}
+              <button
+                className="h-40 w-140 rounded-5 border-none bg-purple-400 px-10 text-sm text-white pc:w-150 pc:text-md"
+                onClick={() => router.push('/signin')}
+              >
+                로그인 및 회원가입
               </button>
-            ))}
+            </div>
+            <div className="flex flex-row justify-center gap-50">
+              {NavCategory.map(dt => (
+                <button type="button" key={dt.key} className="text-lg font-semibold" onClick={() => handleMovePage(dt.value)}>
+                  {dt.title}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
